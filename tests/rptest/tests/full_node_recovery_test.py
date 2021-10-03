@@ -9,7 +9,6 @@
 
 import random
 from rptest.services.cluster import cluster
-from ducktape.mark import ignore
 from ducktape.utils.util import wait_until
 
 from rptest.clients.types import TopicSpec
@@ -30,7 +29,6 @@ class FullNodeRecoveryTest(EndToEndTest):
         super(FullNodeRecoveryTest, self).__init__(test_context=test_context,
                                                    extra_rp_conf=extra_rp_conf)
 
-    @ignore  # https://github.com/vectorizedio/redpanda/issues/3476
     @cluster(num_nodes=6)
     def test_node_recovery(self):
         self.start_redpanda(num_nodes=3)
