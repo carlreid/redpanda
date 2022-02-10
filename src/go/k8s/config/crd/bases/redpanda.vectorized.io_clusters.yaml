@@ -219,6 +219,10 @@ spec:
                                 If TLS is enabled then this subdomain will be requested
                                 as a subject alternative name.
                               type: string
+                            port:
+                              description: Defined the port for Kafka API which will be used as port on all nodes. 
+                                If this port is not available on the nodes, redpanda will fail to schedule.
+                              type: integer
                           type: object
                         port:
                           type: integer
